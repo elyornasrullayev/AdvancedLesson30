@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:hint="Password"
+        app:counterMaxLength="25"
+        app:counterEnabled="true"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintTop_toTopOf="@id/password_strength_txt"
+        app:layout_constraintBottom_toBottomOf="@id/password_strength_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:maxLength="28"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/password_strength_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/password_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text=""
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:textColor="@color/light_gray"
+        />
+    <View
+        android:id="@+id/divider"
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_layout"/>
+
+    <LinearLayout
+        android:id="@+id/calc_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:layout_marginTop="16dp"
+        >
+        <!--        Row 1-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_lowercase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"
+                app:tint="@color/dark_gray"
+                />
+            <TextView
+                android:id="@+id/tv_lowercase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kichkina harf"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                />
+        </LinearLayout>
+
+        <!--        Row 2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_uppercase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"
+                app:tint="@color/dark_gray"
+                />
+            <TextView
+                android:id="@+id/tv_uppercase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Katta harf"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                />
+        </LinearLayout>
+
+        <!--        Row 3-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_digit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"
+                app:tint="@color/dark_gray"
+                />
+            <TextView
+                android:id="@+id/tv_digit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Raqam"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                />
+        </LinearLayout>
+
+        <!--        Row 4-->
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/iv_character"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"
+                app:tint="@color/dark_gray"
+                />
+            <TextView
+                android:id="@+id/tv_character"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belgi"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:textAllCaps="false"
+        android:text="Ro'yxatdan o'tish"
+        android:id="@+id/btn_sign_up"
+        android:enabled="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/calc_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
